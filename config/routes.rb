@@ -1,4 +1,6 @@
 Rubeque::Application.routes.draw do
+  resources :news, controller: :news_posts, as: :news_posts
+
   resources :following, only: [:create, :destroy]
 
   resources :votes

@@ -1,0 +1,16 @@
+<h1><%= @news_post.title %></h1>
+
+<p>
+  <%= raw(Rinku.auto_link(@news_post.body.gsub("\n", "<br/>"))) %>
+</p>
+
+<div class="news-footer">
+  Created by <strong><%= @news_post.user %></strong> on
+  <%= @news_post.created_at %>
+</div>
+
+<% if current_user_admin? %>
+  <%= link_to 'Edit', edit_news_post_path(@news_post) %> |
+  <%= link_to "Destroy", news_post_path(@news_post), method: :delete %> |
+<% end -%>
+<%= link_to 'Back to News', news_posts_path %>

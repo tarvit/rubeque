@@ -1,0 +1,22 @@
+<h1>Rubeque News</h1>
+
+<% @news_posts.each do |post| %>
+  <div class="news">
+    <div class="date">
+      <div><%= post.created_at.strftime("%B") %></div>
+      <div class='day'><%= post.created_at.strftime("%d") %></div>
+      <div><%= post.created_at.strftime("%Y") %></div>
+    </div>
+    <div class="body">
+      <div class="title"><b><%= post.title %></b></div>
+      <div><%= truncate(post.body, length: 320) %></div>
+      <%= link_to "Read More", news_post_path(post) %>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+<% end -%>
+
+<% if current_user_admin? %>
+  <%= link_to 'New Post', new_news_post_path %>
+<% end -%>

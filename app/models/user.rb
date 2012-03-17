@@ -44,6 +44,7 @@ class User
   references_many :problems, inverse_of: :creator
   references_many :following, inverse_of: :follower
   references_many :user_tokens, autosave: true, dependent: :destroy
+  references_many :news_posts
 
   index :score, :solution_count
 
