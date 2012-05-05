@@ -9,11 +9,11 @@ class CodeRefheap
 
   def post
     result = @heap.create(@text, :language => "Ruby")['url']
-    if result =~ /^https:\/\/refheap.com\//
+    if result =~ /^https:\/\/www.refheap.com\//
       @link = result
       return true
     else
-      raise "Error pasting to RefHeap: #{e.message}"
+      raise "Error pasting to RefHeap"
     end
   end
 
