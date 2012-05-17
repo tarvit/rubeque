@@ -74,6 +74,10 @@
 
 <%= link_to "Back to Problems", problems_path() %>
 
+<% if @problem.solved?(current_user) && @problem.next_problem.present? %>
+  <%= link_to "Next Problem", @problem.next_problem %>
+<% end%>
+
 <% if current_user_admin? %>
   <% if !@problem.approved %>
     | <%= link_to 'Approve', approve_problem_path(@problem), method: :put, confirmation: "Are you sure you want to approve this problem?" %>

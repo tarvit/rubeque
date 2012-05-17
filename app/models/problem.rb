@@ -15,6 +15,7 @@ class Problem
 
   references_many :solutions, dependent: :destroy
   referenced_in :creator, class_name: "User"
+  referenced_in :next_problem, class_name: "Problem"
   embeds_many :tags
 
   scope :approved, proc{ where(approved: true ) }
