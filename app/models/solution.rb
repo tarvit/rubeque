@@ -86,7 +86,11 @@ class Solution
     end
 
     def update_user_solution_count
-      self.user.update_solution_count
+      # TODO: find all the solutions and update the user's solution count?
+      if user_id && (updating_user = User.find(self.user_id))
+        updating_user.solution_count = updating_user.solutions.count
+        updating_user.save
+      end
     end
     
 end

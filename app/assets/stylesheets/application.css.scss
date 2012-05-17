@@ -10,7 +10,6 @@
 html, body {height: 100%;}
 
 $width: 950px;
-$green: #CFC;
 
 body {
   padding: 0 0 0;
@@ -67,7 +66,7 @@ div {
 #notice {
   border: 1px solid green;
   color: green;
-  background-color: $green; }
+  background-color: #CCFFCC; }
   
 #error, #warning, #alert {
   border: 1px solid #B11000;
@@ -126,9 +125,9 @@ table {
 
   border-collapse: collapse;
   width: 100%;
-  tr.solved, .self {
+  tr.solved {
     //color: green;
-    background-color: $green !important; }
+    background-color: #CCFFCC !important; }
   td, th {
     border: 1px solid #ccc;
     padding: 4px 6px;
