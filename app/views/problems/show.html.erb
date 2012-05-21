@@ -34,10 +34,17 @@
 <% end %>
 
 <% if !@problem.hidden_code.blank? %>
-<p>
-  <b>Hidden Code:</b><br/>
-  There is hidden code with assertions that is also being run to test out your code.
-</p>
+  <% if @problem.approved? || !current_user_admin? %>
+  <p>
+    <b>Hidden Code:</b><br/>
+    There is hidden code with assertions that is also being run to test out your code.
+  </p>
+<% else %>
+  <div>
+    <b>Hidden Code:</b><br/>
+    <%=raw highlight_code(@problem.hidden_code) %>
+  </div>
+<% end -%>
 <% end %>
 
 <% if @problem.excluded_methods && @problem.excluded_methods.any? %>
