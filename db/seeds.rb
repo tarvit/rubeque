@@ -12,7 +12,7 @@ Problem.create!(#_id: 1,
                 title: "The Truth",
                 tag_list: "booleans",
                 instructions: "Here's a hint: true equals true.",
-                code: "assert_equal true, __",
+                code: "assert_equal true, ___",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -23,7 +23,7 @@ Problem.create!(#_id: 1,
                 title: "Hello World",
                 instructions: "",
                 tag_list: "strings",
-                code: "assert_equal 'HELLO WORLD', 'hello world'.__",
+                code: "assert_equal 'HELLO WORLD', 'hello world'.___",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -34,7 +34,7 @@ Problem.create!(#_id: 2,
                 title: "Nil Values",
                 instructions: "Enter in a boolean value for what #nil? will return.",
                 tag_list: "nil, booleans",
-                code: "[0, '', 'chunky_bacon'].each { |v| assert_equal v.nil?, __ }",
+                code: "[0, '', 'chunky_bacon'].each { |v| assert_equal v.nil?, ___ }",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -45,7 +45,7 @@ Problem.create!(#_id: 3,
                 title: "Reverse",
                 instructions: "What happens when you apply reverse? Hint: don't forget to quote your strings!",
                 tag_list: "strings",
-                code: "assert_equal 'nocab yknuhc'.reverse, __",
+                code: "assert_equal 'nocab yknuhc'.reverse, ___",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -60,7 +60,7 @@ Problem.create!(#_id: 3,
                 order_number: (order_number+=1),
                 code: <<-code_block
 def maximum(arr)
-  __
+  ___
 end
 
 assert_equal maximum([2, 42, 22, 02]), 42
@@ -81,7 +81,7 @@ Problem.create!(#_id: 4,
                 order_number: (order_number+=1),
                 code: <<-eos
 def fizzbuzz(x)
-  __
+  ___
 end
 
 assert_equal fizzbuzz(3), "Fizz"
@@ -98,7 +98,7 @@ Problem.create!(#_id: 5,
                 title: "Map",
                 instructions: "How would you create an array that contains the squares of all elements in a range?",
                 tag_list: "enumerables",
-                code: "assert_equal [1, 4, 9, 16], (1..4).map { __ }",
+                code: "assert_equal [1, 4, 9, 16], (1..4).map { ___ }",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -109,7 +109,7 @@ Problem.create!(difficulty: 0,
                 instructions: "Stop this code from throwing an exception. Hint: find the right seven-letter array
                   method: http://ruby-doc.org/core-1.9.3/Array.html",
                 tag_list: "enumerables, arrays",
-                code: "assert_equal [1, 4, nil, 9, 16, nil].__.inject(0) {|sum, number| sum + number}, 30",
+                code: "assert_equal [1, 4, nil, 9, 16, nil].___.inject(0) {|sum, number| sum + number}, 30",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -122,7 +122,7 @@ Problem.create!(difficulty: 0,
                 order_number: (order_number+=1),
                 tag_list: "ranges",
                 code: <<-code_block
-assert_equal (1..100).to_a[__].reduce(:+), 4494
+assert_equal (1..100).to_a[___].reduce(:+), 4494
 code_block
                )
 
@@ -135,7 +135,7 @@ Problem.create!(difficulty: 0,
                 order_number: (order_number+=1),
                 tag_list: "arithmetic, splat operator",
                 code: <<-code_block
-__
+___
 
 assert_equal twenty_one?(3, 4, 5, 6, 3), true
 assert_equal twenty_one?(3, 11, 10), false
@@ -150,7 +150,7 @@ Problem.create!(difficulty: 0,
                 instructions: "Fill in the missing method. Hint: find the right six-letter enumerable method:
                   http://ruby-doc.org/core-1.9.3/Enumerable.html. There's also a four-letter alias for the method too.",
                 tag_list: "enumerables",
-                code: "assert_equal [1, 3, 7, 4, 9, 8].__(&:even?), 4",
+                code: "assert_equal [1, 3, 7, 4, 9, 8].___(&:even?), 4",
                 approved: true,
                 order_number: (order_number+=1))
 
@@ -164,7 +164,7 @@ Problem.create!(difficulty: 0,
                 tag_list: "arithmetic, enumerables",
                 code: <<-code_block
 def sum_over_50(arr)
-  arr.__
+  arr.___
 end
 
 assert_equal sum_over_50([29, 52, 77, 102]), 231
@@ -184,7 +184,7 @@ Problem.create!(difficulty: 0,
                 tag_list: "classes, stacks",
                 code: <<-code_block
 class Stack
-  __
+  ___
 end
 
 stack = Stack.new([5, 6, 7, 8])
@@ -207,7 +207,7 @@ Problem.create!(difficulty: 0,
                 tag_list: "classes, queues",
                 code: <<-code_block
 class Queue
-  __
+  ___
 end
 
 queue = Queue.new([5, 6, 7, 8])
@@ -232,7 +232,7 @@ Problem.create!(difficulty: 0,
 def temperature_bot(temp)
   # temperature bot is American but takes Celsius temperatures
   case temp
-  when __
+  when ___
     "I like this temperature"
   else
     "This is uncomfortable for me"
@@ -255,7 +255,7 @@ Problem.create!(difficulty: 1,
                 order_number: (order_number+=1),
                 tag_list: "lambdas, procs, ruby 1.9",
                 code: <<-code_block
-even_check = __
+even_check = ___
 
 assert_equal [[2, 4], [1, 2], [8, 12]].select{|arr| even_check.call(*arr)}, [[2, 4], [8, 12]]
 assert_equal even_check.call(42), true
@@ -273,7 +273,7 @@ Problem.create!(difficulty: 1,
                 tag_list: "dates, strings",
                 code: <<-code_block
 def pretty_date(date)
-  __
+  ___
 end
 
 assert_equal pretty_date("11-30-1835"), "Nov 30, 1835"
@@ -292,9 +292,9 @@ Problem.create!(difficulty: 1,
                 order_number: (order_number+=1),
                 tag_list: "strings, regular expressions",
                 code: <<-code_block
-assert_equal "john@mail.com to jane@mail.com".scan(/__/), ["john@mail.com", "jane@mail.com"]
-assert_equal "why@ @chunkybacon.com why@chunkybacon.com".scan(/__/), ["why@chunkybacon.com"]
-assert_equal "why @ @ why@chunkybacon".scan(/__/), []
+assert_equal "john@mail.com to jane@mail.com".scan(/___/), ["john@mail.com", "jane@mail.com"]
+assert_equal "why@ @chunkybacon.com why@chunkybacon.com".scan(/___/), ["why@chunkybacon.com"]
+assert_equal "why @ @ why@chunkybacon".scan(/___/), []
 code_block
                )
 
@@ -323,7 +323,7 @@ class Person
   end
 
   def method_missing(m, *args)
-    __
+    ___
     else
       super
     end
@@ -349,7 +349,7 @@ Problem.create!(#_id: 6,
                 order_number: (order_number+=1),
                 code: <<-code_block
 def reverse_each_word(sentence)
- __
+ ___
 end
 
 assert_equal "olleH ,ereht dna woh era ?uoy", reverse_each_word("Hello there, and how are you?")
@@ -368,7 +368,7 @@ Problem.create!(#_id: 7,
                 tag_list: "arithmetic",
                 code: <<-code_block
 def fibo_finder(n)
-  __
+  ___
 end
 
 assert_equal 0, fibo_finder(0)
@@ -390,7 +390,7 @@ Problem.create!(difficulty: 1,
                 tag_list: "enumerables",
                 excluded_methods: ["uniq_by"],
                 code: <<-code_block
-__
+___
 
 class Programmer
   def initialize(name)
@@ -419,7 +419,7 @@ Problem.create!(difficulty: 1,
                 order_number: (order_number+=1),
                 tag_list: "strings",
                 code: <<-code_block
-__
+___
 
 assert_equal longest_palindrome("xyzzy"), "yzzy"
 assert_equal longest_palindrome("afbbbfjdjklgdfdhfdkjfffhhfffjkdfhdhkyejejfjkd"), "dhfdkjfffhhfffjkdfhd"
@@ -438,15 +438,15 @@ Problem.create!(difficulty: 1,
                 order_number: (order_number+=1),
                 code: <<-code_block
 def dogs
-  __
+  ___
 end
 
 def cats
-  __
+  ___
 end
 
 def chunky_bacon
-  __
+  ___
 end
 
 assert_equal dogs, :dogs
@@ -467,7 +467,7 @@ Problem.create!(#_id: 8,
                tag_list: "strings, regular expressions",
                code: <<-eos
 def phone_number?(num)
-  __
+  ___
 end
 
 assert_equal phone_number?("5555555555"), true
@@ -491,7 +491,7 @@ Problem.create!(#_id: 8,
                tag_list: "arithmetic",
                code: <<-eos
 def prime_factors(num)
-  __
+  ___
 end
 
 assert_equal prime_factors(102), [2, 3, 17]
@@ -512,7 +512,7 @@ Problem.create!(#_id: 8,
                code: <<-eos
 def do_pigs_fly?
   return true
-  __
+  ___
 end
 
 assert_equal do_pigs_fly?, false
@@ -541,7 +541,7 @@ Nine: Christopher Eccleston *series reboot*
 Ten: David Tennant <- personal fav
 Eleven: Matthew Robert Smith - the current doctor"
 
-doctors = doctor_map.scan(/__/)
+doctors = doctor_map.scan(/___/)
 
 assert_equal doctors[0][1], "William Hartnell"
 assert_equal doctors[4][1], "Peter Davison"
@@ -566,7 +566,7 @@ Problem.create!(#_id: 9,
                   order_number: (order_number+=1),
                   tag_list: "arithmetic",
                   code: <<-code_block
- __
+ ___
 
  assert_equal happy_number?(7), true
  assert_equal happy_number?(986543210), true
@@ -593,7 +593,7 @@ Problem.create!(difficulty: 3,
                approved: true,
                order_number: (order_number+=1),
                code: <<-code_block
-__
+___
 
 assert_equal first_trick.winning_probability("2C"), 0.00
 assert_equal first_trick.winning_probability("10C"), 9.08
