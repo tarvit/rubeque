@@ -66,13 +66,13 @@ class Solution
   def combined_code
     full_code = problem.code.clone
     full_code += ("\n" + problem.hidden_code) if problem.hidden_code
-    full_code.gsub("__"){self.code}
+    full_code.gsub("___"){self.code}
   end
 
   def share_code
     # don't add in hidden_code because we don't want it showing up on twitter
     share_code = problem.code.clone
-    share_code.gsub("__"){self.code}
+    share_code.gsub("___"){self.code}
   end
 
   def character_count

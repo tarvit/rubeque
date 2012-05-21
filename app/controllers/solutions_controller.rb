@@ -96,7 +96,7 @@ class SolutionsController < ApplicationController
 
   def share
     @problem = Problem.find(params[:problem_id])
-    @solution_code = @problem.code.gsub("__", params[:solution_code]) rescue nil
+    @solution_code = @problem.code.gsub("___") { params[:solution_code] } rescue nil
     if @solution_code.blank?
       redirect_to @problem and return
     end
