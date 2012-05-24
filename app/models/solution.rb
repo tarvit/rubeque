@@ -28,6 +28,7 @@ class Solution
   track_history :track_create   => true,
                 :track_destroy  => true
 
+  attr_accessible :code
   attr_accessible :code, :cheating, :user_id, :problem_id, as: :admin
 
   def update_score
