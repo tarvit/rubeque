@@ -37,3 +37,14 @@ When /^I fill in a regex date solution$/ do
   answer = "Date.parse(date.sub(/(\\d+)[-\\/](\\d\\d).(\\d{4})/,'\\\\3-\\\\1-\\\\2')).strftime('%b %d, %Y')"
   page.find("#solution_code").set(answer)
 end
+
+Given /^the user "([^"]*)" correctly solved problem "([^"]*)"$/ do |username, title|
+  user = User.first(conditions: {username: username})
+  problem = Problem.first(conditions: {title: title})
+  solution = Solution.new
+  solution.user = user
+  solution.problem = problem
+  solution.save(validate: false)
+end
+
+

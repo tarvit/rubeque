@@ -46,7 +46,7 @@ class SolutionsController < ApplicationController
       if run_and_save_solution(@solution)
         notice = 'Your solution passed!'
         notice += ' Please sign in or register to earn points.' if current_user.blank?
-        notice += " #{share_link}" 
+        notice += " #{share_link} #{next_problem_link}" 
         format.html { redirect_to problem_path(@problem.id, solution_code: @solution.code), notice: notice }
         format.json { render json: @solution, status: :created, location: @solution }
       else
@@ -69,7 +69,7 @@ class SolutionsController < ApplicationController
 
     respond_to do |format|
       if update_solution(@solution)
-        message = current_user_admin? && params[:bypass_run_code] ? "Solution successfully updated." : "Solution passed and was updated. #{share_link}"
+        message = current_user_admin? && params[:bypass_run_code] ? "Solution successfully updated." : "Solution passed and was updated. #{share_link} #{next_problem_link}"
         format.html { redirect_to @problem, notice: message }
         format.json { head :ok }
       else
@@ -134,6 +134,10 @@ class SolutionsController < ApplicationController
 
     def share_link
       "<a href='#{share_problem_solutions_path(@problem, solution_code: @solution.code)}'>Share your solution</a>!"
+    end
+
+    def next_problem_link
+      "<a href='#{share_problem_solutions_path(@problem.next_problem)}'>Next problem</a>"
     end
 
     def update_solution(solution)
