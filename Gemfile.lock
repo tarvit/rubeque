@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/daviddavis/sicuro.git
-  revision: 31ab9a3aa9ce544ea619e9ed48419a5dfc29a92a
+  revision: 58d73a919f692e3f00e2ea4c0b4283ee20be749b
   specs:
-    sicuro (0.0.7)
+    sicuro (0.3.0)
       fakefs
 
 GEM
