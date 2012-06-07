@@ -18,4 +18,13 @@ namespace :problems do
     end
     puts "Updated #{count} problems"
   end
+
+  task :link => :environment do
+    problems = Problem.approved.all.sort_by {|p| [p.difficulty, (-1 * p.solutions.count)]}
+
+    problems.each_with_index do |problem, i|
+      problem.next_problem = problems[i+1] if problems[i+1]
+      problem.save!
+    end
+  end
 end
