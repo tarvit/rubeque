@@ -25,10 +25,11 @@ class CodeExecutor
     timelimit = MAX_EXECUTION_TIME.to_i
     memlimit  = 30
 
-    Sicuro.setup(timelimit, memlimit)
+    sandbox = Sicuro.new
+    sandbox.setup(timelimit, memlimit)
     begin
       start_time = Time.now
-      @result = Sicuro.eval(combined_code)
+      @result = sandbox.eval(combined_code)
       self.time = (Time.now - start_time)
     rescue Exception => e
       @errors << e.message
@@ -61,7 +62,7 @@ class CodeExecutor
   end
 
   def result
-    @result.to_s.strip
+    @result.value.strip
   end
 
   PRECODE = <<-code

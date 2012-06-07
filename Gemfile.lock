@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/daviddavis/sicuro.git
-  revision: 58d73a919f692e3f00e2ea4c0b4283ee20be749b
+  revision: 1fca831b8807006ace82f843fd74a6f8c58fd280
   specs:
     sicuro (0.3.0)
       fakefs
