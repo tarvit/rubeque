@@ -29,6 +29,7 @@ on what to work on.
 * [Joseph Jaber](https://github.com/josephjaber) (josephjaber)
 * [Edward Anderson](https://github.com/nilbus) (nilbus)
 * [Anatoli Makarevich](https://github.com/makaroni4) (makaroni4)
+* [Rogelio Guzman](https://github.com/rogeliog) (rogeliog)
 
 ## Acknowledgements
 
