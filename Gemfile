@@ -1,4 +1,7 @@
 source 'http://rubygems.org'
+# in order to get the next line working run:
+# gem install bundler --pre
+ruby "1.9.3"
 
 gem "rails", "~> 3.2.2"
 gem "mongoid", "~> 2.4"
@@ -9,7 +12,7 @@ gem 'jquery-rails'
 gem 'devise', '~> 2.0.4'
 gem "rinku"
 gem 'exception_notification', :require => 'exception_notifier'
-gem 'sicuro', git: "git://github.com/daviddavis/sicuro.git"
+gem 'sicuro', '~> 0.2.1'
 gem 'mongoid-history'
 gem 'kaminari'
 gem 'chosen-rails'
