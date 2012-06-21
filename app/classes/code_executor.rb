@@ -25,10 +25,11 @@ class CodeExecutor
     timelimit = MAX_EXECUTION_TIME.to_i
     memlimit  = 30
 
-    Sicuro.setup(timelimit, memlimit)
+    sandbox = Sicuro.new
+    sandbox.setup(timelimit, memlimit)
     begin
       start_time = Time.now
-      @result = Sicuro.eval(combined_code)
+      @result = sandbox.eval(combined_code)
       self.time = (Time.now - start_time)
     rescue Exception => e
       @errors << e.message
@@ -38,7 +39,7 @@ class CodeExecutor
     if result == "<timeout hit>"
       @errors << "Your solution timed out."
     elsif result != @uid && @errors.empty?
-      @errors << "Solution contained unexpected output or returned prematurely#{Rails.env.prodution? ? '.' : ": #{result}"}"
+      @errors << "Solution contained unexpected output or returned prematurely#{Rails.env.production? ? '.' : ": #{result}"}"
     end
 
     return @errors.empty?

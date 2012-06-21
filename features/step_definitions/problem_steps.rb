@@ -1,3 +1,7 @@
+Then /^I should be on the problem page for "([^"]*)"$/ do |title|
+  visit problem_path(Problem.first(conditions: {title: title}))
+end
+
 When /I go to the problems page/ do
   visit problems_path
   #debugger
@@ -28,4 +32,14 @@ Then /^I should see problems in this order:$/ do |table|
   end
 
   actual_order.should == expected_order
+end
+
+Given /^there is a problem with title "([^"]*)"$/ do |title|
+  Factory(:problem, title: title)
+end
+
+Given /^the problem "([^"]*)" is followed by "([^"]*)"$/ do |title_1, title_2|
+  problem_1 = Problem.first(conditions: {title: title_1})
+  problem_1.next_problem = Problem.first(conditions: {title: title_2})
+  problem_1.save!
 end

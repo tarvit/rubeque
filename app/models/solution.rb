@@ -66,13 +66,13 @@ class Solution
   def combined_code
     full_code = problem.code.clone
     full_code += ("\n" + problem.hidden_code) if problem.hidden_code
-    full_code.gsub("__"){self.code}
+    full_code.gsub("___"){self.code}
   end
 
   def share_code
     # don't add in hidden_code because we don't want it showing up on twitter
     share_code = problem.code.clone
-    share_code.gsub("__"){self.code}
+    share_code.gsub("___"){self.code}
   end
 
   def character_count
@@ -86,7 +86,11 @@ class Solution
     end
 
     def update_user_solution_count
-      self.user.update_solution_count
+      # TODO: find all the solutions and update the user's solution count?
+      if user_id && (updating_user = User.find(self.user_id))
+        updating_user.solution_count = updating_user.solutions.count
+        updating_user.save
+      end
     end
     
 end
