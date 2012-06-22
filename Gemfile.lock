@@ -228,7 +228,7 @@ GEM
       ffi (~> 1.0)
       multi_json (~> 1.0)
       rubyzip
-    sicuro (0.2.1)
+    sicuro (0.3.0)
       fakefs
     spoon (0.0.1)
     sprockets (2.1.2)
@@ -292,7 +292,7 @@ DEPENDENCIES
   rubyheap (~> 0.1.2)
   sass-rails (~> 3.2.3)
   selenium-webdriver
-  sicuro (~> 0.2.1)
+  sicuro (~> 0.3.0)
   turn (= 0.8.2)
   uglifier (>= 1.0.3)
   uuid (~> 2.3.5)
