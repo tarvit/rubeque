@@ -82,6 +82,7 @@ class ProblemsController < ApplicationController
     @problem.approved = true
     respond_to do |format|
       if @problem.save
+        Twitter.update("Rubeque has a new problem to solve: #{request.protocol}#{request.host}#{problem_path(@problem.id)}")
         format.html { redirect_to({action: 'unapproved'}, {notice: 'Problem was successfully approved.'}) }
         format.json { head :ok }
       else
