@@ -69,4 +69,5 @@ group :development do
   # bash < <(curl -L https://raw.github.com/gist/1333785)
   gem 'debugger'
   gem 'heroku'
+  gem 'pry-rails'
 end
