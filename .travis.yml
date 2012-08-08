@@ -20,5 +20,4 @@ before_script:
 
 notifications:
   email:
-    - kbennoune@gmail.com
-    - ddavis1@gmail.com
+    - rubeque@scimedsolutions.com

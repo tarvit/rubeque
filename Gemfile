@@ -4,8 +4,8 @@ source 'http://rubygems.org'
 ruby "1.9.3"
 
 gem "rails", "~> 3.2.2"
-gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
+gem "mongoid", "~> 2.4.12"
 gem "coderay", "~> 1.0.5"
 gem 'fakefs', :require => "fakefs/safe"
 gem 'jquery-rails'
@@ -53,14 +53,10 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
-  gem 'capybara'
   gem 'rspec-rails', "~> 2.8"
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
   gem 'launchy'
-  gem 'selenium-webdriver'
   gem 'awesome_print'
   gem 'interactive_editor'
 end
@@ -70,4 +66,10 @@ group :development do
   gem 'debugger'
   gem 'heroku'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
 end

@@ -49,11 +49,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    childprocess (0.3.4)
+    childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
     chosen-rails (0.9.8.1)
-      railties (~> 3.0)
-      thor (~> 0.14)
     coderay (1.0.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -96,7 +94,8 @@ GEM
     fakefs (0.4.0)
     faraday (0.8.1)
       multipart-post (~> 1.1)
-    ffi (1.1.0)
+      rack (~> 1.1)
+    ffi (1.1.4)
     gherkin (2.11.1)
       json (>= 1.4.6)
     hashie (1.2.0)
@@ -301,7 +300,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  mongoid (~> 2.4)
+  mongoid (~> 2.4.12)
   mongoid-history
   newrelic_rpm
   omniauth (~> 1.0.1)
@@ -315,7 +314,6 @@ DEPENDENCIES
   rspec-rails (~> 2.8)
   rubyheap (~> 0.1.2)
   sass-rails (~> 3.2.3)
-  selenium-webdriver
   sicuro (~> 0.3.0)
   turn (= 0.8.2)
   twitter
