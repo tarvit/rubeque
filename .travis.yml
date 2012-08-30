@@ -11,6 +11,7 @@ branches:
     - develop
 
 before_install:
+# remove this line after bundler 1.2.0 is out
   - "gem install bundler --pre"
 
 before_script:
