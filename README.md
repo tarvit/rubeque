@@ -30,6 +30,7 @@ on what to work on.
 * [Edward Anderson](https://github.com/nilbus) (nilbus)
 * [Anatoli Makarevich](https://github.com/makaroni4) (makaroni4)
 * [Rogelio Guzman](https://github.com/rogeliog) (rogeliog)
+* [Michaux Kelley](https://github.com/mkelley33) (mkelley33)
 
 ## Acknowledgements
 
