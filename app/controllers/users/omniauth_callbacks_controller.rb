@@ -32,7 +32,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
            redirect_to edit_user_registration_path
         else
           user_token = UserToken.where(provider: omniauth['provider'], uid: omniauth['uid']).first
-
+          puts omniauth['uid']
           if user_token
             flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider']
             sign_in_and_redirect(:user, user_token.user)
