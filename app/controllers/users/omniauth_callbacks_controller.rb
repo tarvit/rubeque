@@ -23,6 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
     def sign_in_or_register(provider)
+      puts 'sign in or register logging'
       if !User.omniauth_providers.index(provider).nil?
         omniauth = env["omniauth.auth"]
         puts 'getting omniauth'
