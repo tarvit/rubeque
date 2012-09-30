@@ -25,18 +25,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def sign_in_or_register(provider)
       if !User.omniauth_providers.index(provider).nil?
         omniauth = env["omniauth.auth"]
-
+        puts 'getting omniauth'
         if current_user
+          puts 'getting current user'
           current_user.user_tokens.find_or_create_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
            flash[:notice] = "Authentication successful"
            redirect_to edit_user_registration_path
         else
+          puts 'no current user, getting user token'
           user_token = UserToken.where(provider: omniauth['provider'], uid: omniauth['uid']).first
           puts omniauth['uid']
           if user_token
+            put 'has user token'
             flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider']
             sign_in_and_redirect(:user, user_token.user)
           else
+            put 'creating new user'
             user = User.new
             user.apply_omniauth(omniauth)
 
