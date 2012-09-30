@@ -92,9 +92,8 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     fakefs (0.4.0)
-    faraday (0.8.1)
+    faraday (0.8.4)
       multipart-post (~> 1.1)
-      rack (~> 1.1)
     ffi (1.1.4)
     gherkin (2.11.1)
       json (>= 1.4.6)
@@ -111,7 +110,7 @@ GEM
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
-    httpauth (0.1)
+    httpauth (0.2.0)
     i18n (0.6.0)
     interactive_editor (0.0.10)
       spoon (>= 0.0.1)
@@ -160,16 +159,16 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    omniauth (1.0.3)
+    omniauth (1.1.1)
       hashie (~> 1.2)
       rack
-    omniauth-github (1.0.2)
+    omniauth-github (1.0.3)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
-    omniauth-oauth2 (1.1.0)
+    omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     omniauth-openid (1.0.1)
@@ -303,7 +302,7 @@ DEPENDENCIES
   mongoid (~> 2.4.12)
   mongoid-history
   newrelic_rpm
-  omniauth (~> 1.0.1)
+  omniauth
   omniauth-github
   omniauth-openid
   omniauth-twitter

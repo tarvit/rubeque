@@ -23,7 +23,7 @@ gem "rubyheap", "~> 0.1.2"
 gem "twitter"
 
 # omniauth gems
-gem 'omniauth', '~> 1.0.1'
+gem 'omniauth'
 gem "omniauth-twitter"
 gem "omniauth-github"
 gem "omniauth-openid"
