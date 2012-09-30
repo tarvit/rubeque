@@ -75,7 +75,7 @@
     <div id="editor" class="code-editor"></div>
   </div>
   <div class="clear"></div>
-<% if !@problem.solved?(current_user) && !current_user_admin?%>
+<% if current_user_admin? || !@problem.solved?(current_user) %>
   <%= f.submit "Submit", confirm: (@solution.new_record? ? "" : "You've already solved this problem. Are you sure you want to change your solution?") %>
 <% end %>
 <% end -%>
