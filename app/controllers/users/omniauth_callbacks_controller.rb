@@ -37,15 +37,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           user_token = UserToken.where(provider: omniauth['provider'], uid: omniauth['uid']).first
           puts omniauth['uid']
           if user_token
-            put 'has user token'
+            puts 'has user token'
             flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider']
             sign_in_and_redirect(:user, user_token.user)
           else
-            put 'creating new user'
+            puts 'creating new user'
             user = User.new
             user.apply_omniauth(omniauth)
-
             if user.save
+              puts 'user saved'
               flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => omniauth['provider'] 
               sign_in_and_redirect(:user, user)
             else
