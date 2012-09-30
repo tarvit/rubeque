@@ -219,15 +219,24 @@ header {
         color: #343434; } } }
 
   .logo {
-    width: 200px;
+    color: #50FFA0;
     float: left;
     font-size: 28px;
+    line-height: 29px;
+    text-align: center;
+    text-shadow: 1px 1px 2px blue, 0 0 1em yellow;
+    width: 200px;
 
     a {
-      margin-left: 0;
-      letter-spacing: -1px;
+      color: #50FFA0;
+    float: left;
+    font-size: 28px;
+    line-height: 29px;
+    text-align: center;
+    text-shadow: 1px 1px 2px blue, 0 0 1em yellow;
+    width: 200px;
       &:hover {
-        text-shadow: 1px 1px 0 #333; } } }
+        text-decoration: none; color: #50FFA0; text-shadow: 1px 1px 2px blue, 0 0 1em red;} } }
 
   .user, .menu {
     float: right;
