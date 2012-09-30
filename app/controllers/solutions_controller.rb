@@ -60,6 +60,9 @@ class SolutionsController < ApplicationController
   # PUT /solutions/1
   # PUT /solutions/1.json
   def update
+    redirect_to :back 
+    flash[:error] = "You cannot update your solutions!"
+    return
     @solution = Solution.find(params[:id])
     if @solution.user != current_user && !current_user.admin?
       flash[:error] = "You cannot update that solution"
